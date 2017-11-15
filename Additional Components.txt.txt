@@ -1,0 +1,10 @@
+Additonal Components: There are some additonal components which are used to build 
+entities(like:Activities,Broadcast Receivers,Content Provider).
+List of additional components are:
+
+1>Manifest:It is the file in which it contains complete information about the application.
+2>Resources:it is used to provide external elements(like:colors,animation,bitmaps etc.).
+3>Intents:It is used to access other component(Activities) of same Application.
+4>Layout:It is the hierarchies(UI) of application .
+5>Views:It is the Class that contain components(viewgroup) such as button,textview,edittext,etc.     
+6>Fragments:It is used to build Dynamic User Interface and it should be used within activity.It is kind of sub-activity. 

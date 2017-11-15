@@ -1,0 +1,215 @@
+Fragment Communication: The direct communication between the Fragments is not possible, to establish the connection between the Fragments we need to define some interfaces.
+
+Steps to establish the connection between Fragments:
+Step 1: Find the reference variable of FragmentManager using
+		FragmentManager fm= getSupportFragmentManager();
+Step 2: Now to add a Fragment in the activity we first need to begin the transition by finding the reference variable of FragmentTransition using:
+		FragmentTransition ft= fm.beginTransition();
+Step 3: Now add all the required Fragments in the activity using:
+	ft.add(R.id.ll1, new FragA(), "A");
+             ft.add(R.id.ll2, new FragB(), "B");
+             ft.commit();
+
+•	The first parameter of add() method defines in which layout you want to add the Fragment.
+•	The second parameter of add() method defines which one Fragment you want to add in the activity.
+•	And the third parameter used mainly to define a tag for further identification purpose the fragment.
+Step 4: In fourth step you need to create the Fragment-A i.e FragA, In this Fragment we will define a interface that will help us to communicate with Activity
+
+		public interface Communication
+                          {
+                           	public void comm(String data);
+                           }
+
+and by creating the reference of that interface 
+
+		Communication c;
+
+Now we will be able to call the method that is defined inside the interface. 
+	
+Step 5: We also need to define a special method i.e onAttach() method which works as a bridge between fragment and the activity.
+public void onAttach(Context context)
+{
+    c= (Communication) context;
+    super.onAttach(context);
+}
+
+Step 6: Because Communication was an interface that is why we can not give the body of its method. The body of the method will be in the main activity through which FragA will communicate with the activity.
+
+Step 7: Now to establish the communication between the activity and FragB  we need to create the reference variable of Fragment class FragB inside the method of the interface i.e:
+
+public void comm(String data)
+{
+    FragB fb= (FragB) fm.findFragmentByTag("B");
+    fb.getData(data);
+}
+ Step 8: As we can see the Fragment-B i.e FragB has a method called getData which will receive some string type data:
+
+public void getData(String data)
+{
+    tv.setText(data);
+}
+
+XML CODE:
+MainActivity layout code: 
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>
+
+
+ FragA XML CODE
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:background="#208b25"
+        android:padding="10dp"
+        android:text="Send"/>
+
+
+</LinearLayout>
+
+FragB XML CODE:
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.example.dell.fragmentexample.FragB">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+
+
+MainActivity JAVA CODE:
+
+
+public class FirstActivity extends AppCompatActivity implements FragA.Communication
+{
+    FragmentManager fm;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first);
+
+        fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.ll1, new FragA(), "A");
+        ft.add(R.id.ll2, new FragB(), "B");
+        ft.commit();
+    }
+
+    @Override
+    public void comm(String data)
+    {
+        FragB fb= (FragB) fm.findFragmentByTag("B");
+        fb.getData(data);
+    }
+}
+
+
+FragA JAVA CODE
+
+public class FragA extends Fragment
+{
+    EditText et;
+    Button btn;
+    Communication c;
+    @Override
+    public void onAttach(Context context)
+    {
+        c= (Communication) context;
+        super.onAttach(context);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        View vv1 = inflater.inflate(R.layout.frag_a, container, false);
+        btn = (Button) vv1.findViewById(R.id.btn);
+        et = (EditText) vv1.findViewById(R.id.et);
+        btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String str= et.getText().toString();
+                c.comm(str);
+            }
+        });
+        return vv1;
+    }
+    public interface Communication
+    {
+        public void comm(String data);
+    }
+}
+
+FragB JAVA CODE:
+
+public class FragB extends android.support.v4.app.Fragment
+{
+
+    TextView tv;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View vv2=inflater.inflate(R.layout.frag_b, container, false);
+        tv=(TextView) vv2.findViewById(R.id.tv);
+        return vv2;
+    }
+
+    public void getData(String data)
+    {
+        tv.setText(data);
+    }
+
+}
+
+
+

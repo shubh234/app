@@ -1,0 +1,43 @@
+		(STRING RESOURCES)
+ ******SHORT DISCRIPTION- -
+A string resource provides text strings for your application with optional text styling and formatting . There are three types of resources that can provide your application with strings-
+1)STRING -
+2)STRING ARRAY -
+3)QUANTITY STRINGS(PLURALS) -
+*****LONG DISCRIPTION--
+By default  over android project includes a string resource file at "edit _message" and set the value to "Enter a message."
+The string class reprents a character string . Whwn a string is created , At that time the value of string is not changed .
+ For example --
+		String str="abc" .
+Types of resources--
+1)String - A single string that can be referenced from the application or from other resource files (such as an XML layout) . A string is a simple resource that is referenced using the value provided in the name attribute . 
+CODE--
+<resources>
+	<string
+		name="name">
+		text_string </string>
+</resources>
+2)String array - A string array is a simple resource that is referenced using the value provided in the name attribute .  As such , you can combine string array resources with other simple resources in the one XML file  , under one <resources> element .
+CODE--
+<resources>
+    	<string-array
+      	 	name="string_array_name">
+        			<item>
+				text_string
+			</item>
+   	 </string-array>
+</resources>
+3)Ouantity strings(plurals) - A plurals collection is a simple resource that is referenced using the value provided in the name attribute . As such ,  you can combine plurals resources with other simple resources in the one XML file , under one <resources> element .
+NOTE--
+<plurals>
+A collection of strings, of which, one string is provided depending on the amount of something. Contains one or more <item> elements.
+CODE--
+<resources>
+   	 <plurals
+        		name="plural_name">
+       		 <item
+			quantity=["one","two"]>
+			text_string
+		</item>
+    	</plurals>
+</resources>

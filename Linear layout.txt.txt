@@ -1,0 +1,74 @@
+Linear Layout
+
+Short discription: It align all its components in either horizontal or vertical position.
+
+
+
+
+
+
+
+
+
+
+
+*******************************************************
+Long Discription:
+*In Android, LinearLayout is a common layout that arranges 'components' in vertical or horizontal order, via orientation attribute.
+*In additional, the highest “weight” component will fill up the remaining space in LinearLayout.
+
+++++++++++++++++++++++++++++++
+by xml code:
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical" >
+   
+   <Button android:id="@+id/btnStartService"
+      android:layout_width="270dp"
+      android:layout_height="wrap_content"
+      android:text="start_service"/>
+      
+   <Button android:id="@+id/btnPauseService"
+      android:layout_width="270dp"
+      android:layout_height="wrap_content"
+      android:text="pause_service"/>
+      
+   <Button android:id="@+id/btnStopService"
+      android:layout_width="270dp"
+      android:layout_height="wrap_content"
+      android:text="stop_service"/>
+      
+</LinearLayout>
+
+
+++++++++++++++++++++++++++++
+By java code:
+
+public class MyActivity extends Activity {
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    LinearLayout layout = new LinearLayout(this);
+    layout.setOrientation(LinearLayout.VERTICAL);
+    layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+
+
+    TextView titleView = new TextView(this);
+    titleView.setWidth(LayoutParams.WRAP_CONTENT);
+    titleView.setHeight(LayoutParams.WRAP_CONTENT);
+    titleView.setTextAppearance(this, android.R.attr.textAppearanceLarge);
+    titleView.setText("Hallo Welt!");
+    layout.addView(titleView);
+
+    setContentView(layout);
+
+}
+}
+
+******************************************************

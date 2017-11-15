@@ -1,0 +1,61 @@
+TABLAYOUT:-
+
+TabLayout provides a horizontal layout to display tabs.
+Use newTab() method to create new tab.You can change tab's label by using setText() method as well as icon by setIcon() method.
+To display the tab, you need to add it to the layout via one of the addTab(Tab) methods.
+You need to set a listener to be notified when any tab's selection state changes.
+You can also add items to TabLayout in your layout through the use of TabItem tag.
+
+
+
+-:  MainActivity.java  :-
+
+package com.example.keerti.tab;
+
+import android.support.design.widget.TabLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+    TabLayout tb;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tb= (TabLayout)findViewById(R.id.tl);
+        TabLayout.Tab f=tb.newTab();
+        f.setText("tab 1");
+        tb.addTab(f);
+
+        TabLayout.Tab s=tb.newTab();
+        s.setText("tab 2");
+        tb.addTab(s);
+
+        TabLayout.Tab t=tb.newTab();
+        t.setText("tab 3");
+        tb.addTab(t);
+    }
+}
+
+
+
+
+-: activity_main.xml :-
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.keerti.tab.MainActivity"
+    android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tl">
+        </android.support.design.widget.TabLayout>
+
+    </LinearLayout>

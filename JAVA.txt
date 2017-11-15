@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">Project-TutorialApp</string>
+
+
+
+<string-array name="JAVA">
+<item>NULL</item>
+<item>NULl</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>package com.example.lenovo.abc;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+public class First extends AppCompatActivity {
+   @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first);
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("App","onStart is running!!");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("App","onResume is running!!");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("App","onPause is running!!");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("App","onStop is running!!");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("App","onDestroy is running!!");
+    }
+}
+</item>
+
+<item>NULL</item>
+
+
+<item>public class MyActivity extends Activity {
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    LinearLayout layout = new LinearLayout(this);
+    layout.setOrientation(LinearLayout.VERTICAL);
+    layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+
+
+    TextView titleView = new TextView(this);
+    titleView.setWidth(LayoutParams.WRAP_CONTENT);
+    titleView.setHeight(LayoutParams.WRAP_CONTENT);
+    titleView.setTextAppearance(this, android.R.attr.textAppearanceLarge);
+    titleView.setText("Hallo Welt!");
+    layout.addView(titleView);
+
+    setContentView(layout);
+
+}
+}</item>
+
+<item>
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	Button myButton = new Button(this);
+	myButton.setText("Press me");
+	myButton.setBackgroundColor(Color.YELLOW);
+
+      RelativeLayout myLayout = new RelativeLayout(this);
+      myLayout.setBackgroundColor(Color.BLUE);
+
+      RelativeLayout.LayoutParams buttonParams =
+                new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+      buttonParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+      buttonParams.addRule(RelativeLayout.CENTER_VERTICAL);
+
+      myLayout.addView(myButton, buttonParams);
+      setContentView(myLayout);
+}</item>
+
+<item>protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.table_layout);
+    final TableLayout tableLayout = (TableLayout) findViewById(R.id.table);
+
+    for (int i = 0; i &lt; 5; i++) {
+        // Creation row
+        final TableRow tableRow = new TableRow(this);
+        tableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT));
+
+        // Creation textView
+        final TextView text = new TextView(this);
+        text.setText("Test" + i);
+        text.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+
+        // Creation  button
+        final Button button = new Button(this);
+        button.setText("Delete");
+        button.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final TableRow parent = (TableRow) v.getParent();
+                tableLayout.removeView(parent);
+            }
+        });
+</item>
+
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+
+<item>
+            public class MainActivity extends Activity{
+        EditText editText1;
+        Button button1;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            editText1=(EditText)findViewById(R.id.et1);
+            button1=(Button)findViewById(R.id.b1);
+        }
+        public void onClick(View v) {
+            editText1.setText("O android");
+        }
+    }
+
+        </item>
+
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+<item>NULL</item>
+
+
+<item>public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = (Button)findViewById(R.id.showToast);
+
+        // Show toast message when button is clicked
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"This is my toast message",Toast.LENGTH_LONG).show();// Set your own toast  message
+            }
+        });
+    }</item>
+
+
+<item>public class MainActivity extends Activity {
+     @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+        //Creating the LayoutInflater instance
+            LayoutInflater li = getLayoutInflater();
+        //Getting the View object as defined in the customtoast.xml file
+            View layout = li.inflate(R.layout.customtoast,
+              (ViewGroup) findViewById(R.id.custom_toast_layout));
+
+        //Creating the Toast object
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.setView(layout);//setting the view of custom toast layout
+            toast.show();
+        }
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            getMenuInflater().inflate(R.menu.activity_main, menu);
+            return true;
+        }
+
+}  </item>
+
+
+</string-array>
+
+
+
+    </resources>

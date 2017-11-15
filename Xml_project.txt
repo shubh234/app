@@ -1,0 +1,415 @@
+<resources>
+    <string name="app_name">Project-TutorialApp</string>
+
+    <string-array name="XML">
+        <item>NULL</item>
+        <item>NULl</item>
+        <item>NULL</item>
+        <item>NULL</item>
+        <item>NULL</item>
+        <item>NULL</item>
+        <item>NULL</item>
+        <item>NULL</item>
+
+
+
+
+<item>     &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n
+            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n
+                android:layout_width=\"fill_parent\"\n
+                android:layout_height=\"fill_parent\"\n
+                android:orientation=\"vertical\" &gt;\n
+
+   &lt;Button android:id=\"@+id/btnStartService\"\n
+       android:layout_width=\"270dp\"\n
+       android:layout_height=\"wrap_content\"\n
+       android:text=\"start_service\"/&gt;\n
+
+   &lt;Button android:id=\"@+id/btnPauseService\"\n
+       android:layout_width=\"270dp\"\n
+       android:layout_height=\"wrap_content\"\n
+       android:text=\"pause_service\"/&gt;\n
+
+   &lt;Button android:id=\"@+id/btnStopService\"\n
+       android:layout_width=\"270dp\"\n
+       android:layout_height=\"wrap_content\"\n
+       android:text=\"stop_service\"/&gt;\n
+
+&lt;/LinearLayout&gt;\n
+        </item>
+
+        <item>
+            &lt;RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n
+                xmlns:tools=\"http://schemas.android.com/tools\"\n
+                android:layout_width=\"fill_parent\"\n
+                android:layout_height=\"fill_parent\"\n
+                tools:context=\".RelativeLayoutAndroidExample\" &gt;\n
+\n
+                    &lt;TextView\n
+                        android:id=\"@+id/text1\"\n
+                        android:layout_width=\"wrap_content\"\n
+                        android:layout_height=\"wrap_content\"\n
+                        android:layout_centerHorizontal=\"true\"\n
+                        android:layout_centerInParent=\"false\"\n
+                        android:text=\"LOGIN\"\n
+                        android:layout_marginTop=\"14dp\"\n
+                        android:textAppearance=\"?android:attr/textAppearanceLarge\"\n
+                        /&gt;\n
+\n
+                     &lt;TextView\n
+                         android:id=\"@+id/textView1\"\n
+                         android:layout_width=\"wrap_content\"
+\n                         android:layout_height=\"wrap_content\"
+  \n                       android:layout_below=\"@+id/text1\"
+    \n                     android:layout_marginTop=\"20dp\"
+      \n                   android:text=\"Username :\"
+        \n                 android:textAppearance=\"?android:attr/textAppearanceLarge\" /&gt;
+\n
+  \n                   &lt;EditText
+    \n                     android:id=\"@+id/editText1\"
+      \n                   android:layout_width=\"wrap_content\"
+        \n                 android:layout_height=\"wrap_content\"
+          \n               android:layout_alignParentRight=\"true\"
+            \n             android:layout_alignTop=\"@+id/textView1\"
+              \n           android:layout_toRightOf=\"@+id/textView1\"
+                \n         /&gt;
+\n
+  \n                   &lt;TextView
+    \n                     android:id=\"@+id/textView2\"
+      \n                   android:layout_width=\"wrap_content\"
+        \n                 android:layout_height=\"wrap_content\"
+          \n               android:layout_below=\"@+id/textView1\"
+            \n             android:layout_marginTop=\"20dp\"
+\n
+  \n                       android:text=\"Password :\"
+    \n                     android:textAppearance=\"?android:attr/textAppearanceLarge\" /&gt;
+\n
+  \n                   &lt;EditText
+    \n                     android:id=\"@+id/editText2\"
+      \n                   android:layout_width=\"wrap_content\"
+        \n                 android:layout_height=\"wrap_content\"
+          \n               android:layout_alignParentRight=\"true\"
+            \n             android:layout_alignTop=\"@+id/textView2\"
+              \n           android:layout_toRightOf=\"@+id/textView2\"
+                \n         android:inputType=\"textPassword\"
+                  \n       /&gt;
+\n
+  \n                   &lt;Button
+    \n                     android:id=\"@+id/btnSubmit\"
+      \n                   android:layout_width=\"wrap_content\"
+        \n                 android:layout_height=\"wrap_content\"
+          \n               android:layout_alignParentLeft=\"false\"
+            \n             android:layout_below=\"@+id/editText2\"
+             \n            android:layout_centerInParent=\"true\"
+               \n          android:text=\"Submit\" /&gt;
+\n
+\n
+  \n                     &lt;Button
+    \n                       android:layout_width=\"wrap_content\"
+      \n                     android:layout_height=\"wrap_content\"
+        \n                   android:layout_alignParentBottom=\"true\"
+          \n                 android:text=\"SIGNUP\"
+            \n               android:layout_centerHorizontal=\"true\"/&gt;
+\n
+  \n      &lt;/RelativeLayout&gt;
+        </item>
+
+        <item>
+            &lt;TableLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+        \n        android:layout_width=\"fill_parent\"
+          \n      android:layout_height=\"fill_parent\"&gt;
+\n
+  \n &lt;TableRow
+    \n   android:layout_width=\"fill_parent\"
+      \n android:layout_height=\"fill_parent\"&gt;
+\n
+  \n    &lt;TextView
+    \n      android:text=\"Time\"
+      \n    android:layout_width=\"wrap_content\"
+        \n  android:layout_height=\"wrap_content\"
+          \n android:layout_column=\"1\" /&gt;
+\n
+  \n    &lt;TextClock
+    \n      android:layout_width=\"wrap_content\"
+      \n    android:layout_height=\"wrap_content\"
+        \n  android:id=\"@+id/textClock\"
+          \nandroid:layout_column=\"2\" /&gt;
+\n
+  \n &lt;/TableRow&gt;
+\n
+  \n &lt;TableRow&gt;
+\n
+  \n    &lt;TextView
+    \n      android:text=\"First Name\"
+      \n    android:layout_width=\"wrap_content\"
+        \n  android:layout_height=\"wrap_content\"
+          \n android:layout_column=\"1\" /&gt;
+\n
+  \n    &lt;EditText
+    \n      android:width=\"200px\"
+      \n    android:layout_width=\"wrap_content\"
+        \n  android:layout_height=\"wrap_content\" /&gt;
+ \n  &lt;/TableRow&gt;
+\n
+  \n &lt;TableRow&gt;
+\n
+  \n    &lt;TextView
+    \n      android:text=\"Last Name\"
+      \n    android:layout_width=\"wrap_content\"
+        \n  android:layout_height=\"wrap_content\"
+         \n android:layout_column=\"1\" /&gt;
+\n
+  \n    &lt;EditText
+    \n      android:width=\"100px\"
+      \n    android:layout_width=\"wrap_content\"
+       \n   android:layout_height=\"wrap_content\" /&gt;
+   \n &lt;/TableRow&gt;
+\n
+ \n  &lt;TableRow
+   \n    android:layout_width=\"fill_parent\"
+     \n  android:layout_height=\"fill_parent\"&gt;
+\n
+  \n    &lt;RatingBar
+    \n      android:layout_width=\"wrap_content\"
+      \n    android:layout_height=\"wrap_content\"
+        \n  android:id=\"@+id/ratingBar\"
+         \n android:layout_column=\"2\" /&gt;
+  \n &lt;/TableRow&gt;
+\n
+  \n &lt;TableRow
+    \n   android:layout_width=\"fill_parent\"
+    \n   android:layout_height=\"fill_parent\"/&gt;
+\n
+  \n &lt;TableRow
+    \n   android:layout_width=\"fill_parent\"
+      \n android:layout_height=\"fill_parent\"&gt;
+\n
+  \n    &lt;Button
+   \n       android:layout_width=\"wrap_content\"
+     \n     android:layout_height=\"wrap_content\"
+       \n   android:text=\"Submit\"
+         \n android:id=\"@+id/button\"
+         \n android:layout_column=\"2\" /&gt;
+  \n &lt;/TableRow&gt;
+    \n    </item>
+
+        <item>&lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+           \n &lt;GridLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+             \n   android:layout_width=\"match_parent\"
+              \n  android:layout_height=\"match_parent\"
+               \n android:columnCount=\"2\"
+               \n android:background=\"#87e\"&gt;
+\n    &lt;Button
+  \n      android:id=\"@+id/button1\"
+    \n    android:layout_width=\"100dp\"
+      \n  android:layout_height=\"70dp\"
+        \n android:text=\"b1\"
+        \n android:layout_marginTop=\"40dp\"
+        \n android:layout_marginLeft=\"30dp\"/&gt;
+   \n &lt;Button
+     \n   android:id=\"@+id/button2\"
+       \n android:text=\"b2\"
+ \n       android:layout_width=\"100dp\"
+   \n     android:layout_height=\"70dp\"
+     \n   android:layout_marginTop=\"40dp\"
+       \n android:layout_gravity=\"right|top\" /&gt;
+\n    &lt;Button
+\n        android:id=\"@+id/button3\"
+  \n      android:text=\"b3\"
+    \n    android:layout_width=\"100dp\"
+      \n  android:layout_height=\"70dp\"
+        \n android:layout_marginTop=\"40dp\"
+       \n android:layout_marginLeft=\"30dp\"/&gt;
+ \n   &lt;Button
+ \n       android:id=\"@+id/button4\"
+  \n      android:text=\"b4\"
+  \n      android:layout_width=\"100dp\"
+  \n      android:layout_height=\"70dp\"
+  \n      android:layout_gravity=\"right\"
+  \n      android:layout_marginTop=\"40dp\" /&gt;
+\n &lt;/GridLayout&gt;
+        </item>
+
+        <item>
+  \n          &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+  \n          &lt;FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+  \n              xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+  \n              xmlns:tools=\"http://schemas.android.com/tools\"
+  \n              android:layout_width=\"match_parent\"
+  \n              android:layout_height=\"match_parent\"
+  \n              android:rowCount=\"3\"
+  \n              android:columnCount=\"3\"
+  \n              tools:context=\"com.example.ajay.t_14.Fir\"
+  \n              android:background=\"#00f\"
+  \n              &gt;
+\n &lt;ImageView
+\n    android:layout_width=\"match_parent\"
+\n    android:layout_height=\"match_parent\"
+\n    android:src=\"@mipmap/ic_launcher\"
+\n    android:id=\"@+id/iv1\" /&gt;
+\n &lt;ImageView
+\n     android:layout_width=\"match_parent\"
+\n     android:layout_height=\"match_parent\"
+\n     android:src=\"@mipmap/fb\"
+\n     android:id=\"@+id/iv2\"/&gt;
+\n &lt;/FrameLayout&gt;
+
+        </item>
+
+        <item>
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;android.support.constraint.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                android:id=\"@+id/constraintLayout\"&gt;
+\n    &lt;TextView
+\n        android:text=\"Constraint Layout example\"
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:textSize=\"30sp\"
+\n        android:id=\"@+id/text\"
+\n        tools:layout_constraintRight_creator=\"1\"
+\n        tools:layout_constraintBottom_creator=\"1\"
+\n        app:layout_constraintBottom_toTopOf=\"@+id/btn\"
+\n        app:layout_constraintRight_toRightOf=\"parent\"
+\n        tools:layout_constraintLeft_creator=\"1\"
+\n        android:layout_marginBottom=\"111dp\"
+\n        app:layout_constraintLeft_toLeftOf=\"parent\"
+\n        /&gt;
+\n    &lt;Button
+\n        android:text=\"show\"
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:id=\"@+id/btn\"
+\n        tools:layout_constraintTop_creator=\"1\"
+\n        tools:layout_constraintRight_creator=\"1\"
+\n        android:layout_marginEnd=\"31dp\"
+\n        app:layout_constraintRight_toRightOf=\"@+id/text\"
+\n        android:layout_marginTop=\"231dp\"
+\n        app:layout_constraintTop_toTopOf=\"parent\"
+\n        android:layout_marginRight=\"17dp\" /&gt;
+\n &lt;/android.support.constraint.ConstraintLayout&gt;
+        </item>
+
+
+        <item>
+              &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"com.android.sampleApp\" android:versionCode=\"1\" android:versionName=\"1.0\"&gt; - (1)
+\n  &lt;application android:icon=\"@drawable/icon\" android:label=\"@string/app_name\" android:permission=\"android.permission.BLUETOOTH\"&gt; - (2)
+\n    &lt;activity android:name=\".SampleActivity\" android:label=\"@string/app_name\"&gt;
+\n      &lt;intent-filter&gt;
+\n        &lt;action android:name=\"android.intent.action.MAIN\" /&gt;
+\n        &lt;category android:name=\"android.intent.category.LAUNCHER\" /&gt;
+\n      &lt;/intent-filter&gt;
+\n    &lt;/activity&gt; - (3)
+\n  &lt;/application&gt;
+\n  &lt;uses-sdk android:minSdkVersion=\"9\" /&gt; - (4)
+\n  &lt;permission android:name=\"com.android.myPermission\" android:icon=\"@drawable/icon\" android:label=\"My Permission\" android:protectionLevel=\"dangerous\" android:permissionGroup=\"com.android.SamplePermission\" android:description=\"@string/some_description\"&gt;&lt;/permission&gt;
+\n &lt;/manifest&gt;
+        </item>
+
+
+        <item>NULL</item>
+
+        <item>
+\n            &lt;RelativeLayout xmlns:androclass=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                android:orientation=\"vertical\"
+\n                android:paddingBottom=\"@dimen/activity_vertical_margin\"
+\n                android:paddingLeft=\"@dimen/activity_horizontal_margin\"
+\n                android:paddingRight=\"@dimen/activity_horizontal_margin\"
+\n                android:paddingTop=\"@dimen/activity_vertical_margin\"
+\n                tools:context=\".MainActivity\" &gt;
+\n
+\n        &lt;Button
+\n            android:id=\"@+id/b1\"
+\n            android:layout_width=\"wrap_content\"
+\n            android:layout_height=\"wrap_content\"
+\n            android:layout_marginLeft=\"66dp\"
+\n            android:layout_marginTop=\"73dp\"
+\n            android:text=\"Button\"
+\n            android:onClick=\"onClick\"
+\n            /&gt;
+\n
+\n        &lt;EditText
+\n            android:id=\"@+id/et1\"
+\n            android:layout_width=\"wrap_content\"
+\n            android:layout_height=\"wrap_content\"
+\n            android:layout_centerHorizontal=\"true\"
+\n            android:ems=\"10\" /&gt;
+        </item>
+
+
+        <item>NULL</item>
+
+        <item>
+\n           With an image saved at res/drawable/image_name.png, this layout XML applies the image to a View:-
+\n &lt;ImageView
+\n    android:layout_height=\"wrap_content\"
+\n    android:layout_width=\"wrap_content\"
+\n    android:src=\"@drawable/image_name\" /&gt;
+\n
+\n     The following code retrieves the image as a Drawable:-
+\n          Resources res = getResources();
+\n          Drawable draw = res.getDrawable(R.drawable.image_name);
+        </item>
+
+        <item>NULL</item>
+        <item>NULL</item>
+        <item>NULL</item>
+
+        <item>
+\n        &lt;RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n            xmlns:tools=\"http://schemas.android.com/tools\"
+\n            android:layout_width=\"match_parent\"
+\n            android:layout_height=\"match_parent\"
+\n            android:paddingBottom=\"@dimen/activity_vertical_margin\"
+\n            android:paddingLeft=\"@dimen/activity_horizontal_margin\"
+\n            android:paddingRight=\"@dimen/activity_horizontal_margin\"
+\n            android:paddingTop=\"@dimen/activity_vertical_margin\"
+\n            tools:context=\".MainActivity\"&gt;
+\n
+\n    &lt;TextView
+\n        android:id=\"@+id/textView\"
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:text=\"Simple Android Toast Example\" /&gt;
+\n
+\n &lt;Button
+\n    android:id=\"@+id/showToast\"
+\n    android:layout_width=\"match_parent\"
+\n    android:layout_height=\"wrap_content\"
+\n    android:text=\"Show Toast Message\"
+\n    android:layout_marginTop=\"16dp\"
+\n    android:layout_below=\"@+id/textView\"/&gt;
+\n &lt;/RelativeLayout&gt;
+
+    </item>
+
+
+        <item>
+
+\n        &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:androclass=\"http://schemas.android.com/apk/res/android\"
+\n                android:id=\"@+id/custom_toast_layout\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                android:orientation=\"vertical\"
+\n                android:background=\"#F14E23\"
+\n                &gt;
+
+\n       &lt;TextView
+\n           android:id=\"@+id/custom_toast_message\"
+\n           android:layout_width=\"wrap_content\"
+\n           android:layout_height=\"wrap_content\"
+\n           android:text=\"ABC\" /&gt;
+\n      &lt;/LinearLayout&gt;
+
+    </item>
+    </string-array>
+
+</resources>

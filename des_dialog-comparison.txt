@@ -1,0 +1,182 @@
+ <item>
+\n             DialogBox is a window which is used to show any message or some information on any specific action.This message asks user to make a decision or enter some additional information.DialogBox is normally used for modal events that require users to take an action before they can proceed.
+\n
+\n Structure of DialogBox includes :-
+\n            1. TitleBar Area
+\n            2. Message or Content Area
+\n            3. Buttons (max. three buttons are allowed.These are Positive Button (e.g.\"Yes\") ,Negative Button (e.g. \"No\",Neutral Button (e.g. \"Cancel\").
+\n
+\n Types of DialogBox:-
+\n            1. Alert Dialog :-
+\n                        Alert dialog box is used to show alerts to the users, get confirmation from the users in order to proceed any action.In order to make an alert dialog, we have to make an object of AlertDialogBuilder which is an inner class of AlertDialog.
+\n            2. DatePicker Dialog :-
+\n                        User picks date using this Dialog. DatePickerDialog class have onDateSetListener() callback methods . This callback method is invoked when the user is done with filling the date.
+\n            3. TimePicker Dialog :-
+\n                         This Dialog is used to select time.TimePickerDialog class have onTimeSetListener() callback methods . This callback method is invoked when the user is done with filling the time.
+\n
+\n            4. Progress Dialog :-
+\n                       ProgressDialog shows the progress of a task. The progress dialog is used if we want the user to wait till the task complete. This is a extension of AlertDialog.
+\n
+\n            Creating custom Dialog :-
+\n Step 1:- Create a custom dialog layout(e.g. custom_dialog.xml)
+\n Step 2:- Attach this layout to Dialog
+        </item>
+
+        <item>
+            A Fragment is basically a part of an Activity which gives its own layout to the Activity, or we can also say that it is kind of a sub-activity.
+\n
+\n A Fragment is consist of several properties like:
+\n 1. It consists of its own layout and behaviour.
+\n 2. It provides us the facility to add and remove itself from activity.
+\n 3. We can use it in more than one activity.
+\n 4. We can use more than one fragment in a single activity.
+\n 5. The life cycle of the fragment is related to the life cycle of the activity that means if the activity goes on pause state, all the fragment will also be stopped.
+\n 6. The concept of Fragment was added to the Android API in Honeycomb version of Android which is API version 11.
+\n We need no extend the Fragment class to design the business code of the Fragment in which we need to override the onCreateView() method.
+\n
+\n            How to add a Fragment in activity: There is two way to add a Fragment into an activity First by XML and Second by JAVA.
+\n BY XML:  Adding a Fragment using XML is very simple, we just need to do is Drag and Drop method.
+\n BY JAVA: To add a Fragment dynamically you need to follow the following steps which are given below:
+\n Step 1: 	FragmentManager fm= getSupportFragmentManager();
+\n Step2:	 FragmentTrasition ft= fm.beginTransition();
+\n Step 3: Now we can add, remove or replace our fragment using ft.
+\n	Like:
+\n		ft.add(R.id.l1,new FragmentA(),”A”);
+\n never forget to use commit () method when you are finished with adding or removing the fragments. i.e
+\n		ft.commit();
+\n
+\n Life Cycle of a Fragment: Fragment has their own life cycle methods just like an activity.
+\n A fragment has 11 life cycle methods which are as follows:
+\n 1.onAttach(): It provides us a reference to the activity which uses the fragment for further initialization work.
+\n 2.onCreate(): System calls this method when a Fragment is created. We initialize all the components of Fragment.
+\n 3.onCreateView():The system calls this callback when it\'s time for the fragment to draw its user interface for the first time.
+\n 4.onActivityCreated():It is called when the host activity is created. At this point, view can be accessed with the findViewById() method.
+\n 5.onStart():The onStart() method is called once the fragment gets visible.
+\n 6.onResume():Fragment becomes active.
+\n 7.onPause(): The system call this method when the user leave fragment.
+\n 8.onStop():Fragment going to be stopped by calling onStop().
+\n 9.onDestroyView():Fragment view will destroy after call this method.
+\n 10.onDestroy():onDestroy() called to do final clean up of the fragment\'s state but Not guaranteed to be called by the Android platform.
+\n
+\n            Fragment Communication: The direct communication between the Fragments is not possible, to establish the connection between the Fragments we need to define some interfaces.
+\n
+\n Steps to establish the connection between Fragments:
+\n Step 1: Find the reference variable of FragmentManager using
+\n		FragmentManager fm= getSupportFragmentManager();
+\n Step 2: Now to add a Fragment in the activity we first need to begin the transition by finding the reference variable of FragmentTransition using:
+\n		FragmentTransition ft= fm.beginTransition();
+\n Step 3: Now add all the required Fragments in the activity using:
+\n	ft.add(R.id.ll1, new FragA(), \"A\");
+\n             ft.add(R.id.ll2, new FragB(), \"B\");
+\n             ft.commit();
+\n
+\n•	The first parameter of add() method defines in which layout you want to add the Fragment.
+\n•	The second parameter of add() method defines which one Fragment you want to add in the activity.
+\n•	And the third parameter used mainly to define a tag for further identification purpose the fragment.
+\n Step 4: In fourth step you need to create the Fragment-A i.e FragA, In this Fragment we will define a interface that will help us to communicate with Activity
+\n
+\n		public interface Communication
+\n                          {
+\n                           	public void comm(String data);
+\n                           }
+\n
+\n and by creating the reference of that interface
+\n
+\n		Communication c;
+\n
+\n Now we will be able to call the method that is defined inside the interface.
+\n
+\n Step 5: We also need to define a special method i.e onAttach() method which works as a bridge between fragment and the activity.
+\n public void onAttach(Context context)
+\n {
+\n    c= (Communication) context;
+\n            super.onAttach(context);
+\n }
+\n
+\n Step 6: Because Communication was an interface that is why we can not give the body of its method. The body of the method will be in the main activity through which FragA will communicate with the activity.
+\n
+\n Step 7: Now to establish the communication between the activity and FragB  we need to create the reference variable of Fragment class FragB inside the method of the interface i.e:
+\n
+\n public void comm(String data)
+\n {
+\n    FragB fb= (FragB) fm.findFragmentByTag(\"B\");
+\n    fb.getData(data);
+\n }
+\n  Step 8: As we can see the Fragment-B i.e FragB has a method called getData which will receive some string type data:
+\n
+\n public void getData(String data)
+\n {
+\n    tv.setText(data);
+\n}
+        </item>
+
+        <item>
+          Splash Activity :-
+\n It is a screen that is used to display a logo or brand for an app.Many different apps like skype etc,
+\n Uses the splash screen to display the logo of their company.
+\n
+        </item>
+
+        <item>
+            The ViewPager is the widget that allows the user to swipe left or right to see an entirely new screen.
+\n	The ViewPager uses a PagerAdapter whose job is to supply views to the MainActivity similar to what a ListAdapter does for a ListView.
+
+        </item>
+
+        <item>
+            TabLayout provides a horizontal layout to display tabs.
+\n Use newTab() method to create new tab.You can change tab\'s label by using setText() method as well as icon by setIcon() method.
+\n To display the tab, you need to add it to the layout via one of the addTab(Tab) methods.
+\n You need to set a listener to be notified when any tab\'s selection state changes.
+\nYou can also add items to TabLayout in your layout through the use of TabItem tag.
+\n
+        </item>
+
+        <item>
+\n            Android provides many ways of storing data of an application. One of this way is called Shared Preferences.
+\n  Shared Preferences allow you to save and retrieve data in the form of key,value pair.
+\n
+\n Reference:-
+\n SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+\n
+\n The first parameter is the key.
+\n The second parameter is the MODE.
+\n
+        </item>
+
+        <item>
+            sp VS dp:
+\n dp: dp is stands for Density-independent Pixels. Density pixel is used to express layout dimensions or position in a density-independent way.
+\n sp: sp is basically stands for Scaled Pixel in android. User mostly prefer to use sp for textsize because but it is scaled by the user’s font size preference.
+\n It is like the Dp unit, but it is also scaled by the user’s font size preference.
+
+
+\n match_parent VS wrap_content:
+\n match_parent: If the layout of a component or a widget is set to be as the match_parent then it will force it to expand to take up as much space as is available within the layout element it\'s been placed in.
+\n wrap_content:  If the layout of a component or a widget is set to be as the
+\n wrap_content then it can expend only far enough to contain the values (or child controls) it contains.
+
+
+\n Drawable VS Mipmap Folder:
+\n Drawable Folder: Drawable Folder is mainly used for external images only.
+\n Mipmap Folder: Mipmap Folder is mainly used for internal images only like Logo.
+
+
+\n Margin VS Padding:
+\n Margin: Margin indicates the gap between the boundary of UI component and its neighbour.
+\n	      Margin is to be applied for the on-outside of the components.
+\n					“OR”
+\n	      The gap between Layout boundary and its parent.
+\n Padding: Padding is the space inside the border, between the border and the actual view\'s content. Note that padding goes completely around the content: there is padding on the top, bottom, right and left sides.
+
+
+\n FindViewById VS LayoutInflater.inflate:
+\n FindViewById: FindViewById() method is basically used to convert any specific xml component into java object.
+\n LayoutInflater.inflate:  The inflate method of LayoutInflter class helps us to convert the whole XML file into java object but first we need to obtain the reference of LayoutInflater so that we can call inflate method.
+
+
+\n SetContentView VS LayoutInflater:
+\n SetContentView: setContentView(View) is a method which sets the activity content to an explicit view. This view is placed directly into the activity\'s view hierarchy.
+\n LayoutInfalter: LayoutInflater is used to instantiate layout XML file into its corresponding View objects. Basically the purpose is to create view objects at runtime depending on the requirement.
+
+        </item>

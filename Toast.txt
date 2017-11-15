@@ -1,0 +1,182 @@
+LAYOUTINFLATER--
+Layoutinflater is used to manipulate android screen using predefined XML layouts . This class is used to instantiate layout XML file into its corresponding view objects . It is never used directly .
+TOAST-
+Toast can be used to display information for the short period of time . Toast is a subclass of java.lang.objectclass.
+TOAST CLASS-
+Toast class is used to broadcast any massage on any specific event .
+It uses a static method makeText which takes three parameter(context,massage,duration).
+NOTE-context class is a abstract class which is used to convey the massage in different classes and toast class is independent upon activity.
+****Toast consist two constants-
+LENGTH_SHORT-Display view for short time.
+LENGTH_LONG-Display view for a long duration.
+Method of a toast class is--
+Public static Toast Make Text(Context cntext,chr seqence text,int duration)
+--It having text and duration .
+public void show()
+--Display the toast.
+public void set margin(float.horizontalMargin,float.verticalMargin)
+--It changes the vertical & horizontal Margin difference.
+Example of normal toast--
+XMLcode--
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Android Toast Example" />
+
+<Button
+    android:id="@+id/showToast"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Show Toast Message"
+    android:layout_marginTop="16dp"
+    android:layout_below="@+id/textView"/>
+</RelativeLayout>
+JAVA code--
+Package com.viralandroid.androidtoast;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = (Button)findViewById(R.id.showToast);
+
+        // Show toast message when button is clicked
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"This is my toast message",Toast.LENGTH_LONG).show();// Set your own toast  message
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
+CUSTOMTOAST--
+We are able to create custom toast in android. So, We can display some images like congratulations or loss on the toast. It means We are able to customize the toast now.
+
+Example of custom toast--
+XML code--
+<RelativeLayout xmlns:androclass="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    tools:context=".MainActivity" >  
+  
+    <TextView  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_centerHorizontal="true"  
+        android:layout_centerVertical="true"  
+        android:text="@string/hello_world" />  
+  
+</RelativeLayout> 
+
+customtoast.xml
+
+Create another xml file inside the layout directory. Here we are having ImageView and TextView in this xml file.
+
+
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:androclass="http://schemas.android.com/apk/res/android"  
+      android:id="@+id/custom_toast_layout"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent"  
+    android:orientation="vertical"  
+    android:background="#F14E23"  
+     >  
+       
+    <ImageView  
+        android:id="@+id/custom_toast_image"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:contentDescription="@string/hello_world"  
+        android:src="@drawable/ic_launcher"/>  
+      
+<TextView  
+        android:id="@+id/custom_toast_message"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:contentDescription="@string/Toast"  
+        android:text="@string/Toast" />  
+</LinearLayout>  
+JAVA code--
+
+package com.example.customtoast2;  
+import android.os.Bundle;  
+import android.app.Activity;  
+import android.view.Gravity;  
+import android.view.LayoutInflater;  
+import android.view.Menu;  
+import android.view.View;  
+import android.view.ViewGroup;  
+import android.widget.Toast;  
+  
+public class MainActivity extends Activity {  
+     @Override  
+        public void onCreate(Bundle savedInstanceState) {  
+            super.onCreate(savedInstanceState);  
+            setContentView(R.layout.activity_main);  
+              
+        //Creating the LayoutInflater instance  
+            LayoutInflater li = getLayoutInflater();  
+        //Getting the View object as defined in the customtoast.xml file  
+            View layout = li.inflate(R.layout.customtoast,  
+              (ViewGroup) findViewById(R.id.custom_toast_layout));  
+           
+        //Creating the Toast object   
+            Toast toast = new Toast(getApplicationContext());  
+            toast.setDuration(Toast.LENGTH_SHORT);  
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);  
+            toast.setView(layout);//setting the view of custom toast layout  
+            toast.show();  
+        }  
+        @Override  
+        public boolean onCreateOptionsMenu(Menu menu) {  
+            getMenuInflater().inflate(R.menu.activity_main, menu);  
+            return true;  
+        }  
+  
+}  

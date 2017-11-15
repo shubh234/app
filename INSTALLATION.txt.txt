@@ -1,0 +1,23 @@
+-PRAVEEN KUMAR
+
+INSTALLATION PROCESS
+
+website - https://developer.android.com/studio/index.html
+
+WINDOWS -  . 
+-> download and launch the .exe fileyou downloaded.
+-> follow the setup wizard to install android studio and necessary tools. 
+
+Ubuntu - download the .zip file and unpack to any appropriate location.
+-> To launch android studio , open a terminal , navigate to the android-studio/bin/directory , and type ./studio.sh command
+->select wheather you want to import previous android studio or not then click OK
+-> the android studio wizard guides you further includes downloading Android SDK that required for developement
+
+REQUIRED LIBRARIES FOR 64-bit machines
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+(if you are using 64 bit version of ubuntu and you need to install 32bit libraries )
+
+MAC
+-> launch the android studio DMG file.
+-> drag and drop android studio into the appliction folder then launch the Android studio
+-> select wheather you want to impot previous android studio setting  then click OK

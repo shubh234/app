@@ -1,0 +1,10 @@
+                         BROADCAST RECEIVER-vidhi
+
+->Broadcast Receivers simply respond to broadcast messages from other applications or from the system itself. 
+->These messages are sometime called events or intents. For example, applications can register for the ACTION_BOOT_COMPLETED system event which is fired once the Android system has completed the boot process.
+
+To set up a Broadcast Receiver in our android application we need to do the following two things-
+1)Creating the Broadcast Receiver.
+2)Registering Broadcast Receiver.
+There is one additional steps in case you are going to implement your custom intents then you will have to create and broadcast those intents.
+

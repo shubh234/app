@@ -1,0 +1,23 @@
+HISTORY OF ANDROID :-
+  It was originally founded and developed by Andy Rubin, Rich Miner,Chris White, and Nick Sears under the name "Android Inc",in October,2003.
+  Google acquired Android Inc in July,2005.
+  On 5 November 2007, Google formed Open Handset Alliance(OHA).
+Open Handset Alliance :-
+       It is a group of 84 technology and mobile companies who have come together to accelerate innovation in mobile and offer consumers a richer, less expensive, and better mobile experience.It includes Google, HTC, Sony, Dell, Intel, Motorola, Qualcomm, Texas Instruments, Samsung Electronics, T-Mobile, Sprint Corporation, Nvidia etc.
+       OHA members are primarily mobile operators, handset manufacturers, software development firms, semiconductor companies and commercialization companies.
+The first android phone was launched by HTC on 22nd October,2008.HTC Dream (also known as T-Mobile G1)was the first commercially launched device to be powered by Android operating system.
+
+History of Android versions :-
+    Android 1.0 (2008)
+    Android 1.5 Cupcake (2009)
+    Android 1.6 Donut (2009)
+    Android 2.0 Eclair (2009)
+    Android 2.2 Froyo (2010)
+    Android 2.3 Gingerbread (2010)
+    Android 3.0 Honeycomb (2011)
+    Android 4.0 Ice Cream Sandwich (2011)
+    Android 4.1 Jelly Bean (2012)
+    Android 4.4 KitKat (2013)
+    Android 5.0 Lollipop (2014)
+    Android 6.0 Marshmallow (2015)
+    The latest version of the platform is now Nougat Android 7.1.1.

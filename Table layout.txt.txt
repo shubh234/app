@@ -1,0 +1,147 @@
+Table layout 
+
+Description :TableLayout is used to be arranged groups of views into rows and columns. You will use the <TableRow> element to build a row in the table. Each row has zero or more cells; each cell can hold one View object.
+
++++++++++++++++++++++++++++++++++++++++++
+attributes:
+1.android:collapseColumns
+
+It collapse the columns(meet more then two columns). The column indices must be separated by a comma: 1, 2, 5.
+
+	
+2.android:shrinkColumns
+
+The zero-based index of the columns to shrink(reduce size of columns). The column indices must be separated by a comma: 1, 2, 5.
+
+	
+3.android:stretchColumns
+
+The zero-based index of the columns to stretch(increase size of columns).  The column indices must be separated by a comma: 1, 2, 5.
+
+
+
+
+*********************************************
+java code:
+
+public class TableLayoutActivity extends Activity {
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.table_layout);
+    final TableLayout tableLayout = (TableLayout) findViewById(R.id.table);
+
+    for (int i = 0; i < 5; i++) {
+        // Creation row
+        final TableRow tableRow = new TableRow(this);
+        tableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT));
+
+        // Creation textView
+        final TextView text = new TextView(this);
+        text.setText("Test" + i);
+        text.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+
+        // Creation  button
+        final Button button = new Button(this);
+        button.setText("Delete");
+        button.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final TableRow parent = (TableRow) v.getParent();
+                tableLayout.removeView(parent);
+            }
+        });
+
+        tableRow.addView(text);
+        tableRow.addView(button);
+
+        tableLayout.addView(tableRow);
+    }
+
+}
+}
+
+***********************************************
+xml code:
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+   
+   <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+		
+      <TextView
+         android:text="Time"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_column="1" />
+			
+      <TextClock
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/textClock"
+         android:layout_column="2" />
+			
+   </TableRow>
+   
+   <TableRow>
+	
+      <TextView
+         android:text="First Name"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_column="1" />
+			
+      <EditText
+         android:width="200px"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+   </TableRow>
+   
+   <TableRow>
+	
+      <TextView
+         android:text="Last Name"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_column="1" />
+			
+      <EditText
+         android:width="100px"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+   </TableRow>
+   
+   <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+		
+      <RatingBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/ratingBar"
+         android:layout_column="2" />
+   </TableRow>
+   
+   <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"/>
+		
+   <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+		
+      <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Submit"
+         android:id="@+id/button"
+         android:layout_column="2" />
+   </TableRow>
+
+</TableLayout>
+

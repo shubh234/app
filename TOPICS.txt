@@ -1,0 +1,26 @@
+<string-array name="Topics">
+        <item>Introduction</item>
+        <item>History</item>
+        <item>Installation</item>
+        <item>Additional Components</item>
+        <item>Broadcast Receiver</item>
+        <item>Activity</item>
+        <item>Life Cycle of an Activity</item>
+        <item>Layouts</item>
+        <item>Linear Layout</item>
+        <item>Relative Layout</item>
+        <item>Table Layout</item>
+        <item>Grid Layout</item>
+        <item>Frame Layout</item>
+        <item>Constraint Layout</item>
+        <item>Manifest</item>
+        <item>Event Handling</item>
+        <item>Orientation</item>
+        <item>String Resources</item>
+        <item>Drawable Resources</item>
+        <item>Values</item>
+        <item>View</item>
+        <item>Viewgroup</item>
+        <item>Toast</item>
+        <item>Layout Inflater</item>
+    </string-array>

@@ -1,0 +1,39 @@
+                LAYOUTS-vidhi
+*******SHORT DESCRIPTION-
+A layout defines the visual structure for a user interface, such as the UI for an activity or app widget.
+	For example- The activity_main.xml is a layout file available in res/layout directory,that is referenced by your application when building its interface.
+
+
+*******LONG DESCRIPTION-
+	An Android layout is a class that handles arranging the way its children appear on the screen. 
+ 	Anything that is a View (or inherits from View) can be a child of a layout. All of the layouts inherit from ViewGroup (which inherits from View) so you can nest layouts. 
+	 You could also create your own custom layout by making a class that inherits from ViewGroup.
+
+-->The default layout is-
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vidhi.proj.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+
+-->There are different types of Layouts available----
+1)LINEAR LAYOUT-It is a basic layout that arrange the different components either in vertical form or in horizontal form.
+2)RELATIVE LAYOUT-It is also a basic layout which arrange the views w.r.t. its parent or its neighbours. 
+3)TABLE LAYOUT-It is a view that groups views into rows and columns.
+4)ABSOLUTE LAYOUT-It enables you to specify the exact location of its children.
+5)FRAME LAYOUT-FrameLayout represents a simple layout for the user interface of Android applications.
+6)LIST VIEW-It is a viewgroup that displays a list of scrollable items.
+7)GRID VIEW-GridView let you arranges components in a two-dimensional scrolling grid.

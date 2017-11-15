@@ -1,0 +1,384 @@
+        <item>LIST VIEW:\n
+\n
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                tools:context=\"com.example.lenovo.a21_62.MainActivity\"&gt;
+\n
+\n    &lt;ListView
+\n        android:id=\"@+id/lv\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"wrap_content\"&gt;&lt;/ListView&gt;
+\n
+\n            &lt;/LinearLayout&gt;
+\n
+\n GRID VIEW:
+\n
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                tools:context=\"com.example.lenovo.a26_6.MainActivity\"&gt;
+\n
+\n    &lt;GridView
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"match_parent\"
+\n        android:id=\"@+id/grid\"
+\n        android:numColumns=\"2\"&gt;&lt;/GridView&gt;
+\n
+\n &lt;/LinearLayout&gt;
+\n
+\n
+\n SPINNER:
+\n
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n               tools:context=\"com.example.lenovo.a26_6.MainActivity\"&gt;
+\n
+\n    &lt;Spinner
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:id=\"@+id/sp\"&gt;&lt;/Spinner&gt;
+\n
+\n &lt;/LinearLayout&gt;
+\n
+</item>
+
+        <item>
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:orientation=\"vertical\"
+\n                android:layout_height=\"match_parent\"
+\n                android:background=\"#890\"
+\n                tools:context=\"com.example.ajay.t_dialogbox.MainActivity\"&gt;
+\n    &lt;LinearLayout
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"60dp\"
+\n        android:orientation=\"horizontal\"
+\n        android:layout_marginTop=\"20dp\"&gt;
+\n        &lt;EditText
+\n            android:id=\"@+id/e1\"
+\n            android:layout_width=\"0dp\"
+\n            android:hint=\"Date\"
+\n            android:layout_height=\"match_parent\"
+\n            android:layout_weight=\"3\"/&gt;
+\n        &lt;Button
+\n            android:id=\"@+id/b1\"
+\n            android:layout_width=\"0dp\"
+\n            android:layout_height=\"match_parent\"
+\n            android:text=\"Select Date\"
+\n            android:layout_weight=\"1\"
+\n            android:onClick=\"date\"/&gt;
+\n    &lt;/LinearLayout&gt;
+\n    &lt;LinearLayout
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"60dp\"
+\n        android:orientation=\"horizontal\"
+\n        android:layout_marginTop=\"20dp\"&gt;
+\n        &lt;EditText
+\n            android:id=\"@+id/e2\"
+\n            android:layout_width=\"0dp\"
+\n            android:hint=\"Time\"
+\n            android:layout_height=\"match_parent\"
+\n            android:layout_weight=\"3\"/&gt;
+\n        &lt;Button
+\n            android:id=\"@+id/b2\"
+\n            android:layout_width=\"0dp\"
+\n            android:layout_height=\"match_parent\"
+\n            android:text=\"Select Time\"
+\n            android:layout_weight=\"1\"
+\n            android:onClick=\"time\"/&gt;
+\n    &lt;/LinearLayout&gt;
+\n    &lt;Button
+\n        android:id=\"@+id/b3\"
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:text=\"Submit\"
+\n        android:layout_gravity=\"center\"
+\n        android:onClick=\"alert\"/&gt;
+\n &lt;/LinearLayout&gt;
+\n
+\n            CUSTOM DIALOG:
+\n
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                android:background=\"#488\"
+\n                tools:context=\"com.example.ajay.t_custom_dialogbox.MainActivity\"&gt;
+\n    &lt;Button
+\n        android:id=\"@+id/btn\"
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:layout_marginTop=\"30dp\"
+\n        android:layout_marginLeft=\"40dp\"
+\n        android:text=\"click here to show Custom Dialog\"
+\n        android:onClick=\"fun\" /&gt;
+\n &lt;/LinearLayout&gt;
+\n
+        </item>
+
+        <item>
+\n            MainActivity layout code:
+\n
+\n &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n    android:layout_width=\"match_parent\"
+\n    android:layout_height=\"match_parent\"
+\n    android:orientation=\"vertical\"&gt;
+\n
+\n    &lt;LinearLayout
+\n        android:id=\"@+id/ll1\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"0dp\"
+\n        android:layout_weight=\"5\"
+\n        android:orientation=\"vertical\"&gt;
+\n
+\n    &lt;/LinearLayout&gt;
+\n
+\n    &lt;LinearLayout
+\n        android:id=\"@+id/ll2\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"0dp\"
+\n        android:layout_weight=\"5\"
+\n        android:orientation=\"vertical\"&gt;
+\n    &lt;/LinearLayout&gt;
+\n
+\n &lt;/LinearLayout&gt;
+\n
+\n
+\n FragA XML CODE
+\n
+\n &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n    android:layout_width=\"match_parent\"
+\n    android:layout_height=\"match_parent\"
+\n    android:orientation=\"vertical\"&gt;
+\n
+\n    &lt;EditText
+\n        android:id=\"@+id/et\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:layout_margin=\"20dp\"
+\n        android:padding=\"10dp\"/&gt;
+\n
+\n    &lt;Button
+\n        android:id=\"@+id/btn\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:layout_marginLeft=\"80dp\"
+\n        android:layout_marginRight=\"80dp\"
+\n        android:layout_marginTop=\"20dp\"
+\n        android:background=\"#208b25\"
+\n        android:padding=\"10dp\"
+\n        android:text=\"Send\"/&gt;
+\n
+\n
+\n &lt;/LinearLayout&gt;
+\n
+\n FragB XML CODE:
+\n
+\n &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n    xmlns:tools=\"http://schemas.android.com/tools\"
+\n    android:layout_width=\"match_parent\"
+\n    android:layout_height=\"match_parent\"
+\n    tools:context=\"com.example.dell.fragmentexample.FragB\"&gt;
+\n
+\n    &lt;TextView
+\n        android:id=\"@+id/tv\"
+\n        android:layout_margin=\"20dp\"
+\n        android:padding=\"10dp\"
+\n        android:textSize=\"20sp\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"match_parent\"/&gt;
+\n
+\n &lt;/LinearLayout&gt;
+\n
+\n
+        </item>
+
+        <item>
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                android:orientation=\"vertical\"&gt;
+\n &lt;TextView
+\n     android:layout_width=\"wrap_content\"
+\n     android:layout_height=\"wrap_content\"
+\n     android:layout_centerInParent=\"true\"
+\n     android:background=\"@drawable/splash_border\"
+\n     android:fontFamily=\"cursive\"
+\n     android:padding=\"20dp\"
+\n     android:text=\"Expertise\nANDROID\"
+\n     android:textColor=\"#000\"
+\n     android:textSize=\"40sp\"
+\n     android:textStyle=\"bold\"/&gt;
+\n &lt;/RelativeLayout&gt;
+\n
+        </item>
+
+        <item>
+\n            &lt;RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                tools:context=\".MainActivity\"&gt;
+\n
+\n    &lt;android.support.v4.view.ViewPager
+\n        android:id=\"@+id/viewpager\"
+\n        android:layout_width=\"match_parent\"
+\n        android:layout_height=\"match_parent\"/&gt;
+\n
+\n &lt;/RelativeLayout&gt;
+\n
+\n
+\n There are three pages with their respective layouts.The layout of a single page is given below:
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                android:orientation=\"vertical\" android:layout_width=\"match_parent\"
+\n                android:background=\"@android:color/holo_blue_dark\"
+\n                android:layout_height=\"match_parent\"&gt;
+\n
+\n    &lt;TextView
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:text=\"Second View\"
+\n        android:layout_gravity=\"center_horizontal\"
+\n        android:textSize=\"28sp\"
+\n        android:textColor=\"@android:color/black\"
+\n        android:textStyle=\"bold\"
+\n        android:layout_centerVertical=\"true\"
+\n        android:layout_centerHorizontal=\"true\"
+\n        android:id=\"@+id/textView\" /&gt;
+\n
+\n    &lt;TextView
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:text=\"Swipe left to\nFirst View\"
+\n        android:layout_gravity=\"center_horizontal\"
+\n        android:textSize=\"20sp\"
+\n        android:textColor=\"@android:color/black\"
+\n        android:textStyle=\"bold\"
+\n        android:minLines=\"2\"
+\n        android:id=\"@+id/textView2\"
+\n        android:padding=\"@dimen/activity_horizontal_margin\"
+\n        android:layout_alignParentBottom=\"true\"
+\n        android:layout_alignParentLeft=\"true\"
+\n        android:layout_alignParentStart=\"true\" /&gt;
+\n
+\n    &lt;TextView
+\n        android:layout_width=\"wrap_content\"
+\n        android:layout_height=\"wrap_content\"
+\n        android:text=\"Swipe right to\nThird View\"
+\n        android:layout_gravity=\"center_horizontal\"
+\n        android:textSize=\"20sp\"
+\n        android:textColor=\"@android:color/black\"
+\n        android:textStyle=\"bold\"
+\n        android:padding=\"@dimen/activity_horizontal_margin\"
+\n        android:minLines=\"2\"
+\n        android:id=\"@+id/textView3\"
+\n        android:layout_alignTop=\"@+id/textView2\"
+\n        android:layout_alignParentRight=\"true\"
+\n        android:layout_alignParentEnd=\"true\" /&gt;
+        </item>
+
+       <item>
+
+\n            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:app=\"http://schemas.android.com/apk/res-auto\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\"
+\n                android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\"
+\n                tools:context=\"com.example.keerti.tab.MainActivity\"
+\n                android:orientation=\"vertical\"&gt;
+\n
+\n        &lt;android.support.design.widget.TabLayout
+\n            android:layout_width=\"match_parent\"
+\n            android:layout_height=\"wrap_content\"
+\n            android:id=\"@+id/tl\"&gt;
+\n        &lt;/android.support.design.widget.TabLayout&gt;
+\n
+\n    &lt;/LinearLayout&gt;
+
+        </item>
+
+        <item>
+            &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;
+\n            &lt;LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"
+\n                xmlns:tools=\"http://schemas.android.com/tools\" android:layout_width=\"match_parent\"
+\n                android:layout_height=\"match_parent\" android:paddingLeft=\"@dimen/activity_horizontal_margin\"
+\n                android:paddingRight=\"@dimen/activity_horizontal_margin\"
+\n                android:paddingTop=\"@dimen/activity_vertical_margin\"
+\n                android:paddingBottom=\"@dimen/activity_vertical_margin\" tools:context=\".MainActivity\"&gt;
+\n
+\n   &lt;TextView
+\n       android:layout_width=\"wrap_content\"
+\n       android:layout_height=\"wrap_content\"
+\n       android:text=\"Shared Preference \"
+\n       android:id=\"@+id/textView\"
+\n       android:layout_alignParentTop=\"true\"
+\n       android:layout_centerHorizontal=\"true\"
+\n       android:textSize=\"35dp\" /&gt;
+\n
+\n   &lt;EditText
+\n       android:layout_width=\"wrap_content\"
+\n       android:layout_height=\"wrap_content\"
+\n       android:id=\"@+id/editText\"
+\n       android:layout_below=\"@+id/textView2\"
+\n       android:layout_marginTop=\"67dp\"
+\n       android:hint=\"Name\"
+\n       android:layout_alignParentRight=\"true\"
+\n       android:layout_alignParentEnd=\"true\"
+\n       android:layout_alignParentLeft=\"true\"
+\n       android:layout_alignParentStart=\"true\" /&gt;
+\n
+\n   &lt;EditText
+\n       android:layout_width=\"wrap_content\"
+\n       android:layout_height=\"wrap_content\"
+\n       android:id=\"@+id/editText2\"
+\n       android:layout_below=\"@+id/editText\"
+\n       android:layout_alignParentLeft=\"true\"
+\n       android:layout_alignParentStart=\"true\"
+\n       android:layout_alignParentRight=\"true\"
+\n       android:layout_alignParentEnd=\"true\"
+\n       android:hint=\"Pass\" /&gt;
+\n
+\n   &lt;EditText
+\n       android:layout_width=\"wrap_content\"
+\n       android:layout_height=\"wrap_content\"
+\n       android:id=\"@+id/editText3\"
+\n       android:layout_below=\"@+id/editText2\"
+\n       android:layout_alignParentLeft=\"true\"
+\n       android:layout_alignParentStart=\"true\"
+\n       android:layout_alignParentRight=\"true\"
+\n       android:layout_alignParentEnd=\"true\"
+\n       android:hint=\"Email\" /&gt;
+\n
+\n   &lt;Button
+\n       android:layout_width=\"wrap_content\"
+\n       android:layout_height=\"wrap_content\"
+\n       android:text=\"Save\"
+\n       android:id=\"@+id/button\"
+\n       android:layout_below=\"@+id/editText3\"
+\n       android:layout_centerHorizontal=\"true\"
+\n       android:layout_marginTop=\"50dp\" /&gt;
+\n
+\n&lt;/LinearLayout&gt;
+
+       </item>
+        
+        <item>NULL</item>

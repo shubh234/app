@@ -1,0 +1,67 @@
+**********************
+
+Sp VS Dp:
+Dp: Dp is stands for Density-independent Pixels. Density pixel is used to express layout dimensions or position in a density-independent way.
+Sp: Sp is basically stands for Scaled Pixel in android. User mostly prefer to use Sp for text     size because but it is scaled by the user’s font size preference.
+It is like the Dp unit, but it is also scaled by the user’s font size preference.
+
+
+**************************
+match_parent VS wrap_content:
+
+match_parent: If the layout of a component or a widget is set to be as the match_parent then it will force it to expand to take up as much space as is available within the layout element it's been placed in.
+
+wrap_content:  If the layout of a component or a widget is set to be as the
+wrap_content then it can expend only far enough to contain the values (or child controls) it contains.
+
+*************************
+
+Drawable VS Mipmap Folder:
+
+Drawable Folder: Drawable Folder is mainly used for external images only.
+Mipmap Folder: Mipmap Folder is mainly used for internal images only like Logo.
+
+**************************
+
+Margin VS Padding:
+Margin: Margin indicates the gap between the boundary of UI component & its neighbour.
+	      Margin is to be applied for the on-outside of the components.
+					“OR”
+	      The gap between Layout boundary and its parent.
+
+Padding: Padding is the space inside the border, between the border and the actual view's content. Note that padding goes completely around the content: there is padding on the top, bottom, right and left sides.
+
+***********************************
+FindViewById VS LayoutInflater.inflate:
+FindViewById: FindViewById() method is basically used to convert any specific xml component into java object.
+Ex: 
+In XML: 
+		<Button
+    			android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:text="Button"
+   			android:textSize="25sp"
+    			android:id="@+id/btn/>
+
+In Java:
+      Button b = (Button) FindViewById(R.id.btn);
+
+LayoutInflater.inflate:  The inflate method of LayoutInflter class helps us to convert the whole XML file into java object but first we need to obtain the reference of LayoutInflater so that we can call inflate method.
+Ex.
+	LayoutInflater l = getLayoutInflater();
+		      "or"
+	LayoutInflater l = getSystemService();	
+	
+
+	View vv = l.inflate(R.id.my_layout,null);
+
+Now we can get the reference of any component through object vv.
+
+
+**********************************
+SetContentView VS LayoutInflater:
+
+SetContentView: setContentView(View) is a method which sets the activity content to an explicit view. This view is placed directly into the activity's view hierarchy. 
+
+LayoutInfalter: LayoutInflater is used to instantiate layout XML file into its corresponding View objects. Basically the purpose is to create view objects at runtime depending on the requirement.
+

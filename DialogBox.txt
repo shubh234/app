@@ -1,0 +1,165 @@
+*****************DIALOG BOX******************
+
+            DialogBox is a window which is used to show any message or some information on any specific action.This message asks user to make a decision or enter some additional information.DialogBox is normally used for modal events that require users to take an action before they can proceed.
+            
+Structure of DialogBox includes :-
+            1. TitleBar Area
+            2. Message or Content Area
+            3. Buttons (max. three buttons are allowed.These are Positive Button (e.g."Yes") ,Negative Button (e.g. "No",Neutral Button (e.g. "Cancel").
+
+Types of DialogBox:-
+            1. Alert Dialog :-
+                        Alert dialog box is used to show alerts to the users, get confirmation from the users in order to proceed any action.In order to make an alert dialog, we have to make an object of AlertDialogBuilder which is an inner class of AlertDialog.
+            2. DatePicker Dialog :-
+                        User picks date using this Dialog. DatePickerDialog class have onDateSetListener() callback methods . This callback method is invoked when the user is done with filling the date.
+            3. TimePicker Dialog :- 
+                         This Dialog is used to select time.TimePickerDialog class have onTimeSetListener() callback methods . This callback method is invoked when the user is done with filling the time.
+          
+            4. Progress Dialog :-
+                       ProgressDialog shows the progress of a task. The progress dialog is used if we want the user to wait till the task complete. This is a extension of AlertDialog.
+            
+
+*********code showing Alert,TimePicker,Datepicker Dialogs*******************
+
+********activity_main.xml**********
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#890"
+    tools:context="com.example.ajay.t_dialogbox.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/e1"
+            android:layout_width="0dp"
+            android:hint="Date"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Select Date"
+            android:layout_weight="1"
+            android:onClick="date"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/e2"
+            android:layout_width="0dp"
+            android:hint="Time"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Select Time"
+            android:layout_weight="1"
+            android:onClick="time"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_gravity="center"
+        android:onClick="alert"/>
+</LinearLayout>
+
+*********MainActivity.java*********
+
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.icu.util.Calendar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+   @RequiresApi(api = Build.VERSION_CODES.N)
+    public void date(View v)
+    {
+        final EditText editText=(EditText)findViewById(R.id.e1);
+        final Calendar c = Calendar.getInstance();
+        int yr = c.get(Calendar.YEAR);
+        int   month = c.get(Calendar.MONTH);
+       int  day = c.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        editText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    }
+                }, yr, month,day);
+        datePickerDialog.show();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void time(View v)
+    {
+
+       final EditText e=(EditText)findViewById(R.id.e2);
+        Calendar  calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int min = calendar.get(Calendar.MINUTE);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity.this,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+                        e.setText(hourOfDay + ":" + minute);
+                    }
+                }, hour, min, false);
+        timePickerDialog.show();
+    }
+    public void alert(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("This is Alert Dialog Box");
+        builder.setMessage("Are you want to proceed ?");
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"No is clicked", Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.setPositiveButton("YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Yes is clicked",Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Cancel is clicked",Toast.LENGTH_LONG).show();
+                    }
+                });
+        builder.show();
+    }}

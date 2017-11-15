@@ -1,0 +1,52 @@
+Fragment: A Fragment is basically a part of an Activity which gives its own layout to the Activity, or we can also say that it is kind of a sub-activity.
+
+
+A Fragment is consist of several properties like:
+1. It consists of its own layout and behaviour.
+2. It provides us the facility to add and remove itself from activity.
+3. We can use it in more than one activity.
+4. We can use more than one fragment in a single activity.
+5. The life cycle of the fragment is related to the life cycle of the activity that means if the activity goes on pause state, all the fragment will also be stopped.
+6. The concept of Fragment was added to the Android API in Honeycomb version of Android which is API version 11.
+We need no extend the Fragment class to design the business code of the Fragment in which we need to override the onCreateView() method. 
+For example:
+public class FragmentA extends Fragment
+{
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+{
+	View vv1 = inflater.inflate(R.layout.frag_a, container, false);
+	Return vv1;
+	}
+}
+
+****************************************
+How to create a Fragment: We can create a fragment in XML by using <fragment> tag. Now we can design our fragment layout just like an activity.
+****************************************
+How to add a Fragment in activity: There is two way to add a Fragment into an activity First by XML and Second by JAVA.
+BY XML:  Adding a Fragment using XML is very simple, we just need to do is Drag and Drop method.
+BY JAVA: To add a Fragment dynamically you need to follow the following steps which are given below:
+Step 1: 	FragmentManager fm= getSupportFragmentManager();
+Step2:	 FragmentTrasition ft= fm.beginTransition();
+Step 3: Now we can add, remove or replace our fragment using ft.
+	Like:
+		ft.add(R.id.l1,new FragmentA(),”A”);
+never forget to use commit () method when you are finished with adding or removing the fragments. i.e 
+		ft.commit(); 
+
+*****************************************
+
+Life Cycle of a Fragment: Fragment has their own life cycle methods just like an activity.
+A fragment has 11 life cycle methods which are as follows:
+1.onAttach(): It provides us a reference to the activity which uses the fragment for further initialization work. 
+2.onCreate(): System calls this method when a Fragment is created. We initialize all the components of Fragment.
+3.onCreateView():The system calls this callback when it's time for the fragment to draw its user interface for the first time. 
+4.onActivityCreated():It is called when the host activity is created. At this point, view can be accessed with the findViewById() method. 
+5.onStart():The onStart() method is called once the fragment gets visible.
+6.onResume():Fragment becomes active.
+7.onPause(): The system call this method when the user leave fragment.
+8.onStop():Fragment going to be stopped by calling onStop().
+9.onDestroyView():Fragment view will destroy after call this method.
+10.onDestroy():onDestroy() called to do final clean up of the fragment's state but Not guaranteed to be called by the Android platform.
+
+
+

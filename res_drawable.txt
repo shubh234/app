@@ -1,0 +1,36 @@
+Drawable Resources (res/drawable/):AJAY KUMAR
+ ******* SHORT DESCRIPTION :-
+Image files like .png , .jpg , .gif or XML that are complied into bitmaps,state lists,shapes,animation drawables.They are saved in res/drawable/ and accessed from R.drawable class.
+
+*******LONG DESCRIPTION :-
+There are different types of drawables :-
+1. Bitmap File :-
+   A bitmap graphic file (.png, .jpg, or .gif). Creates a BitmapDrawable.
+ file location : res/drawable/file_name.jpg (.png,.jpg, or .gif)
+Resource reference :
+ In XML : @drawable/file_name
+ In Java: R.drawable.file_name
+2.Nine-Patch file :-
+ Nine-Patch file is a stretchable bitmap file that Android will automatically scale to accomodate the size of the view.file extension : .9, like file.9.png and defined in XML format using <nine-patch> tag.
+3. Shape drawable :-
+   supports all basic shapes such as -line, oval and rectangle and defined in XML format using <shape> tag.
+4.State lists :-
+  is a group of several images that are mapped to different states of an object.Android uses the correct image form list based on current state of object and defined in XML format using <selector> tag.
+5. Layer List :-
+A Drawable that manages an array of other Drawables. 
+
+Adding an image to res/drawable folder :-
+1.Right click on res, new Image Asset
+2.On Asset type choose Action Bar and Tab Icons
+3.Choose the image path
+4.Give image name in Resource name
+5.Next->Finish
+
+Example:- With an image saved at res/drawable/image_name.png, this layout XML applies the image to a View:-
+<ImageView
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:src="@drawable/image_name" />
+The following code retrieves the image as a Drawable:-
+          Resources res = getResources();
+          Drawable draw = res.getDrawable(R.drawable.image_name);

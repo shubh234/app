@@ -1,0 +1,13 @@
+
+Android
+
+
+
+Android is an operating system for mobile devices such as smartphones and tablet computers. Android Operating System is built on the open Linux Kernel.
+It includes a touch screen user interface, widgets, camera, network data monitoring and all the other features that enable a cell phone to be called a smartphone. 
+Android is a platform that supports various applications, available through the Android Play Store.
+The Android platform also allows end users to develop, install and use their own applications on top of the Android framework.
+The Android framework is licensed under the Apache License, with Android application developers holding the right to distribute their applications under their customized license.
+The Android platform is the product of the Open Handset Alliance, a group of organizations collaborating to build a better mobile phone. 
+The group, led by Google, includes mobile operators, device handset manufacturers, component manufacturers, software solution and platform providers, and marketing companies. 
+From a software development standpoint, Android sits smack in the middle of the open source world.

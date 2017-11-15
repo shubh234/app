@@ -1,0 +1,43 @@
+MANIFEST FILE:-
+
+Short Description:It is the file in which it contains complete information about the application(such as services provider,Intent filter).It is generated automatically after creation of project.It also declares the android api that the application is going to use.
+
+
+
+
+
+
+***************************************************************************
+Long Description:
+
+
+*Every components that you have dovelop for your application, must be declare in the manifest file called AndroidManifest.xml which is root of your project.If you do not declare it in a manifest file,then component will not considerd by the operating system.  
+Sample code:-
+*****************************************************************************
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.android.sampleApp" android:versionCode="1" android:versionName="1.0"> - (1)
+  <application android:icon="@drawable/icon" android:label="@string/app_name" android:permission="android.permission.BLUETOOTH"> - (2)
+    <activity android:name=".SampleActivity" android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity> - (3)
+  </application>
+  <uses-sdk android:minSdkVersion="9" /> - (4)
+  <permission android:name="com.android.myPermission" android:icon="@drawable/icon" android:label="My Permission" android:protectionLevel="dangerous" android:permissionGroup="com.android.SamplePermission" android:description="@string/some_description"></permission>
+</manifest>
+
+*******************************************************************************
+
+1>Versioning:<manifest> tag consists of application versioning information (android:versionCode and android:versionName) helps the android systems to maintain the upgrade/ downgrade of application.
+2>Activity:Android application consists of four types of components:
+
+*Service 
+*Content providers 
+*Broadcast receivers 
+*Activity 
+3>Permission:Android OS model requires applications to highlight what features of OS or resources they are going to use(such as bluetoth,Wifi,camera,sensors,etc).
+4>SDK Version:
+*manifest file provides the information to the system while installation 
+*checking for the availability of SDK version and install accordingly.

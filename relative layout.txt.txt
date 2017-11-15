@@ -1,0 +1,146 @@
+Relative Layout 
+
+Short discription:
+It specify that how components of realtive layout are views are positioned relative to each other.
+components can be positioned by using their neighbouring components or parent . 
+
+
+
+
+
+
+
+
+
+
+
+***************************************************************
+
+Long discription:
+
+
+****************
+list of attributes:
++++++++++++++++++++++++++
+android:layout_above
+android:layout_alignBottom
+android:layout_alignLeft
+android:layout_alignParentBottom
+android:layout_alignParentEnd
+android:layout_alignParentLeft
+android:layout_alignParentRight
+android:layout_alignParentStart
+android:layout_alignParentTop
+android:layout_alignRight
+android:layout_alignStart
+android:layout_alignTop
+android:layout_below
+android:layout_centerHorizontal
+android:layout_centerInParent
+android:layout_centerVertical
+android:layout_toEndOf
+android:layout_toLeftOf
+android:layout_toRightOf
+android:layout_toStartOf
+*******************************************************
+xml code:
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:context=".RelativeLayoutAndroidExample" >
+        
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="false"
+                        android:text="LOGIN"
+                        android:layout_marginTop="14dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        />
+                 
+                     <TextView
+                         android:id="@+id/textView1"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/text1"
+                         android:layout_marginTop="20dp"
+                         android:text="Username :"
+                         android:textAppearance="?android:attr/textAppearanceLarge" />
+                 
+                     <EditText
+                         android:id="@+id/editText1"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentRight="true"
+                         android:layout_alignTop="@+id/textView1"
+                         android:layout_toRightOf="@+id/textView1"
+                         />
+                     
+                     <TextView
+                         android:id="@+id/textView2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/textView1"
+                         android:layout_marginTop="20dp"
+                         
+                         android:text="Password :"
+                         android:textAppearance="?android:attr/textAppearanceLarge" />
+                 
+                     <EditText
+                         android:id="@+id/editText2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentRight="true"
+                         android:layout_alignTop="@+id/textView2"
+                         android:layout_toRightOf="@+id/textView2"
+                         android:inputType="textPassword"
+                         />
+                 
+                     <Button
+                         android:id="@+id/btnSubmit"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentLeft="false"
+                         android:layout_below="@+id/editText2"
+                         android:layout_centerInParent="true"
+                         android:text="Submit" />
+                         
+                         
+                       <Button
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentBottom="true"
+                         android:text="SIGNUP"
+                         android:layout_centerHorizontal="true"/>
+        
+        </RelativeLayout>
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+java code:
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	Button myButton = new Button(this);
+	myButton.setText("Press me");
+	myButton.setBackgroundColor(Color.YELLOW);
+		
+      RelativeLayout myLayout = new RelativeLayout(this);
+      myLayout.setBackgroundColor(Color.BLUE);
+ 
+      RelativeLayout.LayoutParams buttonParams = 
+                new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT, 
+                    RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+      buttonParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+      buttonParams.addRule(RelativeLayout.CENTER_VERTICAL);
+  
+      myLayout.addView(myButton, buttonParams);
+      setContentView(myLayout);
+}
